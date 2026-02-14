@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine Proposal 💖</title>
+<style>
+body{
+  margin:0;
+  height:100vh;
+  background: radial-gradient(circle at top, #ff9a9e, #fad0c4);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:'Segoe UI', sans-serif;
+  overflow:hidden;
+}
+
+.box{
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(10px);
+  padding:40px;
+  border-radius:25px;
+  text-align:center;
+  color:#fff;
+  box-shadow:0 0 30px rgba(0,0,0,0.2);
+}
+
+h1{
+  font-size:2.4em;
+  margin-bottom:20px;
+}
+
+p{
+  font-size:1.2em;
+  margin-bottom:25px;
+}
+
+button{
+  padding:12px 30px;
+  border:none;
+  border-radius:30px;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+#yesBtn{
+  background:white;
+  color:#ff4f81;
+}
+
+#noBtn{
+  background:#ff4f81;
+  color:white;
+  position:absolute;
+}
+
+.heart{
+  font-size:60px;
+  animation:beat 1s infinite;
+}
+
+@keyframes beat{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.2);}
+  100%{transform:scale(1);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <div class="heart">💖</div>
+  <h1>Will you be my Valentine?</h1>
+  <p>You already have my heart… now answer me 💕</p>
+  <button id="yesBtn" onclick="goToGift()">Yes 💘</button>
+  <button id="noBtn" onmouseover="moveNo()">No 💔</button>
+</div>
+
+<script>
+function moveNo(){
+  const noBtn=document.getElementById("noBtn");
+  const x=Math.random()*(window.innerWidth-120);
+  const y=Math.random()*(window.innerHeight-60);
+  noBtn.style.left=x+"px";
+  noBtn.style.top=y+"px";
+}
+
+function goToGift(){
+  window.location.href="gift.html";
+}
+</script>
+
+</body>
+</html>
